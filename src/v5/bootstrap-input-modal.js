@@ -92,7 +92,7 @@ class inputModal {
     static #buildModalInputTextDom(configuration) {
         let type = configuration.type;
         if (!inputModal.#validateModalType(type)) {
-            configuration.type = 'text';
+            type = 'text';
             console.warn(`${type} is an invaild configuration type, using text`);
         }
 
@@ -190,7 +190,7 @@ class inputModal {
             'url',
             'week'
         ];
-        return
+        return acceptableTypes.includes(type);
     }
 
     static show(params) {
