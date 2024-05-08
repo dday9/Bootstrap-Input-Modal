@@ -228,4 +228,3 @@ class inputModal {
         return modalPromise;
     }
 }
-
