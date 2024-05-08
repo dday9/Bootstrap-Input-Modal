@@ -9,6 +9,10 @@ Bootstrap made major changes in version 5, namely that Bootstrap 5 is designed t
 [v5](./src/v5) uses modern ES6 code, specifically [JavaScript classes: Private class methods](https://caniuse.com/mdn-javascript_classes_private_class_methods).
 
 ## Demo
+Demo Files: [./demo](./demo)
+
+Fiddle (v4): [https://jsfiddle.net/pz5mo9eh/](https://jsfiddle.net/pz5mo9eh/)
+
 Fiddle (v5): [https://jsfiddle.net/Lgovbrdx/](https://jsfiddle.net/e8701srg/)
 
 ## Dependencies

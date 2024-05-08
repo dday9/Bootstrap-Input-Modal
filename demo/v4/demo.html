@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A demonstration of the Bootstrap Input Modal" />
+    <meta name="author" content="dday9" />
+
+    <title>Bootstrap4 Input Modal Demo</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+
+<body>
+	<div class="container">
+		<button type="button" id="button-none" class="btn btn-primary">
+		  None Configuration
+		</button>
+		<button type="button" id="button-full" class="btn btn-primary">
+		  Full Configuration
+		</button>
+		<p class="text-body" id="results"></p>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+	<script src="bootstrap-input-modal.min.js"></script>
+	<script>
+        const modalClosed = value => {
+            const results = document.querySelector('#results')
+            if (value) {
+                results.innerText = `You entered: ${value}`;
+            } else {
+                results.innerText = 'You either clicked no or outside of the modal.';
+            }
+        };
+
+        const buttonNoneClick = () => {
+            inputModal.show()
+                .then(value => modalClosed(value))
+                .catch(() => modalClosed());
+        };
+
+        const buttonFullClick = () => {
+            inputModal.show({
+                    closeIcon: true,
+                    message: 'Enter a value, please.',
+                    title: 'Example',
+            type: 'number',
+                    no: {
+                        class: 'btn btn-danger',
+                        text: 'No'
+                    },
+                    yes: {
+                        class: 'btn btn-success',
+                        text: 'Yes'
+                    }
+                })
+                .then(value => modalClosed(value))
+                .catch(() => modalClosed());
+        };
+
+        window.addEventListener('load', function() {
+            document.querySelector('#button-none').addEventListener('click', buttonNoneClick);
+            document.querySelector('#button-full').addEventListener('click', buttonFullClick);
+        }, false);
+	</script>
+</body>
+
+</html>
